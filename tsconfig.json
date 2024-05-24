@@ -20,14 +20,14 @@
     ],
     "ignoreDeprecations":"5.0"
   },
-  // "vueCompilerOptions": {
-  //   "nativeTags": [
-  //     "block",
-  //     "component",
-  //     "template",
-  //     "slot"
-  //   ]
-  // },
+  "vueCompilerOptions": {
+    "nativeTags": [
+      "block",
+      "component",
+      "template",
+      "slot"
+    ]
+  },
   "include": [
     "src/**/*.ts",
     "src/**/*.d.ts",
