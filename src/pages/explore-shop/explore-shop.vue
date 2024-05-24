@@ -4,6 +4,7 @@
     <view style="font-size: large;">{{ item.name }}</view>
     <view style="color: gray;">{{ item.address }}</view>
   </view>
+  <view></view>
 </template>
 
 <script lang="ts" setup>
