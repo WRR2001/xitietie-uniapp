@@ -1,0 +1,20 @@
+/* 水平间距 */
+/* 水平间距 */
+.navbar-diy.data-v-159896bb {
+  height: 52px;
+  background-color: #fff;
+  border-bottom: 2px solid #a5a5a5;
+  display: flex;
+  align-items: center;
+}
+.navbar-diy .left.data-v-159896bb {
+  display: flex;
+  align-items: center;
+  margin-left: 16px;
+  height: 52px;
+}
+.navbar-diy .left .text.data-v-159896bb {
+  font-size: 17px;
+  margin-right: 6px;
+  white-space: nowrap;
+}

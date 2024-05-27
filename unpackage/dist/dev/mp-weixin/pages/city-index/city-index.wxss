@@ -1,0 +1,23 @@
+/* 水平间距 */
+/* 水平间距 */
+.flex-box {
+  display: flex;
+  flex-direction: column;
+  /* 使用列方向布局 */
+  height: 100vh;
+  /* 让整个视图占满窗口高度 */
+}
+.tab {
+  flex: 0 0 auto;
+  /* 固定高度，不允许扩展 */
+}
+.index {
+  flex: 1 1 auto;
+  /* 让索引组件填充剩余空间 */
+  position: relative;
+  /* 设置父容器相对定位 */
+  margin-top: 10px;
+  /* 通过 margin-top 调整位置，确保不覆盖顶部内容 */
+  overflow-y: auto;
+  /* 允许垂直滚动 */
+}

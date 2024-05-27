@@ -1,0 +1,1 @@
+<view class="flex-box"><view class="tab"><zb-tab wx:if="{{b}}" u-i="2b7537d2-0" bind:__l="__l" bindupdateModelValue="{{a}}" u-p="{{b}}"></zb-tab></view><view class="index"><uni-indexed-list wx:if="{{d}}" bindclick="{{c}}" u-i="2b7537d2-1" bind:__l="__l" u-p="{{d}}"/></view></view>
