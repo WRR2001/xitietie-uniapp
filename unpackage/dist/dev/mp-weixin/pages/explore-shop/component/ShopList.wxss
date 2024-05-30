@@ -1,0 +1,87 @@
+/* 水平间距 */
+/* 水平间距 */
+.item {
+  margin-top: 13px;
+  background-color: white;
+  height: 85px;
+  display: flex;
+  align-items: center;
+}
+.item .info-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.item .info-box .info {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  width: 270px;
+  height: 100%;
+  padding-left: 20px;
+  padding-right: 10px;
+  position: relative;
+  /* 为伪元素定位 */
+  /* 使用伪元素实现右边框 */
+}
+.item .info-box .info .name {
+  display: flex;
+  font-size: 17px;
+}
+.item .info-box .info .label {
+  display: flex;
+}
+.item .info-box .info .label .text {
+  color: #f89b0f;
+  font-size: 13px;
+  padding: 2px;
+}
+.item .info-box .info .address {
+  display: flex;
+}
+.item .info-box .info .address .text {
+  font-size: 14px;
+  color: gray;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  color: gray;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.item .info-box .info::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 2px;
+  /* 边框宽度 */
+  height: 65%;
+  /* 边框高度，可以根据需要调整 */
+  background-color: #ebebeb;
+  /* 边框颜色 */
+}
+.item .info-box .button {
+  padding-right: 13px;
+  white-space: nowrap;
+}
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.empty .text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: gray;
+}
+.empty .image {
+  height: 321px;
+  width: 321px;
+}

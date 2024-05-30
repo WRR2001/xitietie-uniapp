@@ -1,5 +1,8 @@
 /* 水平间距 */
 /* 水平间距 */
+.background.data-v-159896bb {
+  background-color: #eeeff8;
+}
 .navbar-diy.data-v-159896bb {
   height: 52px;
   background-color: #fff;

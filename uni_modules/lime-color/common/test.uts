@@ -1,0 +1,211 @@
+// import  * as util from './util-test'
+// import * as util from './conversion-test'
+// import * as util from './format-input-test'
+// import * as util from './color-test'
+// import * as util from './generate-test'
+import { tinyColor } from './color'
+
+// console.log('generate:', generate('red'))
+console.log('tinyColor~~~~~~~~~~~~~~test')
+// console.log('示例1',tinyColor('#000'));
+// console.log('示例2',tinyColor('000'));
+// console.log('示例3',tinyColor('#369C'));
+// console.log('示例4',tinyColor('369C'));
+// console.log('示例5',tinyColor('#f0f0f6'));
+// console.log('示例6',tinyColor('f0f0f6'));
+// console.log('示例7',tinyColor('#f0f0f688'));
+// console.log(tinyColor('f0f0f688'));
+
+// console.log('示例1',tinyColor('hsl(0, 100%, 50%)').toString());
+// console.log('示例2',tinyColor('hsla(0, 100%, 50%, .5)').toString());
+// console.log('示例3',tinyColor('hsl(0, 100%, 50%)').toString());
+// console.log('示例4',tinyColor('hsl 0 1.0 0.5').toString());
+// console.log('示例5',tinyColor({ h: 0, s: 1, l: 0.5 }).toString());
+
+// console.log('示例1',tinyColor('hsv(0, 100%, 100%)').toString());
+// console.log('示例2',tinyColor('hsva(0, 100%, 100%, .5)').toString());
+// console.log('示例3',tinyColor('hsv (0 100% 100%)').toString());
+// console.log('示例4',tinyColor('hsv 0 1 1').toString());
+// console.log('示例5',tinyColor({ h: 0, s: 100, v: 100 }).toString());
+
+// console.log('示例1',tinyColor('RED').toString());
+// console.log('示例2',tinyColor('blanchedalmond').toString());
+// console.log('示例3',tinyColor('darkblue').toString());
+
+// console.log('示例1:',0x0,tinyColor(0x0).toString());
+// console.log('示例2',tinyColor(0xaabbcc).toString());
+
+// const color = tinyColor('red')
+// const color2 = tinyColor({ r: 255, g: 255, b: 255 })
+// console.log('示例1:',color.originalInput);
+// console.log('示例2:',color2.originalInput);
+
+// const color = tinyColor('red')
+// const color2 = tinyColor({ r: 255, g: 255, b: 255 })
+// console.log('示例1:',color.format);
+// console.log('示例2:',color2.format);
+
+// const color1 = tinyColor('red');
+// console.log(color1.isValid, color1.toHexString())
+// const color2 = tinyColor('not a color');
+// console.log(color2.isValid, color2.toHexString())
+
+// const color1 = tinyColor('#fff');
+// const color2 = tinyColor('#000')
+// console.log(color1.getBrightness()) 
+// console.log(color2.getBrightness()) 
+
+// const color1 = tinyColor('#fff');
+// const color2 = tinyColor('#000')
+// console.log(color1.isLight()) 
+// console.log(color2.isLight()) 
+
+// const color1 = tinyColor('#fff');
+// const color2 = tinyColor('#000')
+// console.log(color1.isDark()) 
+// console.log(color2.isDark()) 
+
+// const color1 = tinyColor('#fff');
+// const color2 = tinyColor('#000')
+// console.log(color1.getLuminance()) 
+// console.log(color2.getLuminance()) 
+
+// const color1 = tinyColor('rgba(255, 0, 0, .5)');
+// const color2 = tinyColor('rgb(255, 0, 0)')
+// const color3 = tinyColor('transparent')
+// console.log(color1.getAlpha()) 
+// console.log(color2.getAlpha()) 
+// console.log(color3.getAlpha()) 
+
+// const color = tinyColor('red');
+// console.log(color.getAlpha()) ; // 1
+// color.setAlpha(0.5);
+// console.log(color.getAlpha()); // .5
+// console.log(color.toRgbString()); // "rgba(255, 0, 0, .5)"
+
+// const color = tinyColor('rgba(255, 0, 0, .5)');
+// const computedColor = color.onBackground('rgb(0, 0, 255)');
+// console.log(computedColor.toRgbString()); // "rgb(128, 0, 128)"
+
+// const color = tinyColor('red');
+// console.log(color.toHsv()); // { h: 0, s: 1, v: 1, a: 1 }
+
+// const color = tinyColor('red');
+// console.log(color.toHsvString()); // "hsv(0, 100%, 100%)"
+// color.setAlpha(0.5);
+// console.log(color.toHsvString()); // "hsva(0, 100%, 100%, 0.5)"
+
+// const color = tinyColor('red');
+// console.log(color.toHsl()); // { h: 0, s: 1, l: 0.5, a: 1 }
+
+// const color = tinyColor('red');
+// console.log(color.toHsvString()); // "hsl(0, 100%, 50%)"
+// color.setAlpha(0.5);
+// console.log(color.toHsvString()); // "hsla(0, 100%, 50%, 0.5)"
+
+// console.log(tinyColor('#aabbcc').toNumber() === 0xaabbcc)
+// console.log(tinyColor('rgb(1, 1, 1)').toNumber() === (1 << 16) + (1 << 8) + 1)
+
+// const color = tinyColor('red');
+// console.log(color.toHex()); // "ff0000"
+
+// const color = tinyColor('red');
+// console.log(color.toHexString()); // "#ff0000"
+
+// const color = tinyColor('red');
+// console.log(color.toHex8()); // "ff0000ff"
+
+// const color = tinyColor('red');
+// console.log(color.toHex8String()); // "#ff0000ff"
+
+// const color1 = tinyColor('#ff000000');
+// console.log(color1.toHexShortString()); // "#ff000000"
+// console.log(color1.toHexShortString(true)); // "#f000"
+
+// const color2 = tinyColor('#ff0000ff');
+// console.log(color2.toHexShortString()); // "#ff0000"
+// console.log(color2.toHexShortString(true)); // "#f00"
+
+// const color = tinyColor('red');
+// console.log(color.toRgb()); // { r: 255, g: 0, b: 0, a: 1 }
+
+// const color = tinyColor('red');
+// console.log(color.toRgbString()); // "rgb(255, 0, 0)"
+// color.setAlpha(0.5);
+// console.log(color.toRgbString()); // "rgba(255, 0, 0, 0.5)"
+
+// const color = tinyColor('red')
+// console.log(color.toPercentageRgb())
+
+// const color = tinyColor('red');
+// console.log(color.toPercentageRgbString()); // "rgb(100%, 0%, 0%)"
+// color.setAlpha(0.5);
+// console.log(color.toPercentageRgbString()); // "rgba(100%, 0%, 0%, 0.5)"
+
+// const color = tinyColor('red');
+// console.log(color.toName()); // "red"
+
+// const color1 = tinyColor('red');
+// console.log(color1.toString()); // "red"
+// console.log(color1.toString('hsv')); // "hsv(0, 100%, 100%)"
+
+// const color2 = tinyColor('rgb(255, 0, 0)');
+// console.log(color2.toString()); // "rgb(255, 0, 0)"
+// color2.setAlpha(0.5);
+// console.log(color2.toString()); // "rgba(255, 0, 0, 0.5)"
+
+// const color = tinyColor('red')
+//   .lighten()
+//   .desaturate()
+//   .toHexString()
+// console.log(color)
+
+// console.log(tinyColor('#f00').lighten().toString())
+// console.log(tinyColor('#f00').lighten(100).toString())
+
+// console.log(tinyColor('#f00').brighten().toString())
+// console.log(tinyColor('#f00').darken().toString())
+// console.log(tinyColor('#f00').darken(100).toString())
+// console.log(tinyColor('#f00').tint().toString())
+// console.log(tinyColor('#f00').tint(100).toString())
+// console.log(tinyColor('#f00').shade().toString())
+// console.log(tinyColor('#f00').shade(100).toString())
+// console.log(tinyColor('#f00').desaturate().toString())
+// console.log(tinyColor('#f00').desaturate(100).toString())
+// console.log(tinyColor('hsl(0, 10%, 50%)').saturate().toString())
+// console.log(tinyColor('#f00').greyscale().toString())
+// console.log(tinyColor('#f00').spin(180).toString())
+// console.log(tinyColor('#f00').spin(-90).toString())
+// console.log(tinyColor('#f00').spin(90).toString())
+// console.log(tinyColor('#f00').spin(0).toString())
+// console.log(tinyColor('#f00').spin(360).toString())
+// let color1 = tinyColor('#f0f');
+// let color2 = tinyColor('#0f0');
+// console.log(color1.mix(color2).toHexString())
+
+// const colors = tinyColor('#f00').analogous()
+// console.log(colors.map((t):string => t.toHexString()))
+
+// const colors = tinyColor('#f00').monochromatic();
+// console.log(colors.map((t):string => t.toHexString()))
+// const colors = tinyColor('#f00').splitcomplement();
+// console.log(colors.map((t):string => t.toHexString()));
+
+// const colors = tinyColor('#f00').triad();
+// console.log(colors.map((t):string => t.toHexString()));
+
+// const colors = tinyColor('#f00').tetrad();
+// console.log(colors.map((t):string => t.toHexString()));
+
+// const colors = tinyColor('#f00').polyad(4);
+// console.log(colors.map((t):string => t.toHexString()));
+// console.log(tinyColor('#f00').complement().toHexString())
+
+
+let color1 = tinyColor('red');
+let color2 = tinyColor('#f00');
+
+function a():string{
+	return 'rgb(255, 0, 0)'
+}
+console.log('tinyColor equals：', color1.equals(color2), color1.equals('#f00'), a() === a());

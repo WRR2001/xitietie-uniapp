@@ -8,6 +8,13 @@
     "miniprogram": {
       "list": [
         {
+          "name": "pages/explore-shop/explore-shop",
+          "pathName": "pages/explore-shop/explore-shop",
+          "query": "selectedCityId=156410500",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "pages/city-index/city-index",
           "pathName": "pages/city-index/city-index",
           "query": "",

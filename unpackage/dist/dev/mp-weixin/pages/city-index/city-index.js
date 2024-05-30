@@ -14,6 +14,7 @@ if (!Math) {
 const _sfc_main = {
   __name: "city-index",
   setup(__props) {
+    const isLoading = common_vendor.ref(true);
     const tablist = [
       {
         name: "国内（含港澳台）",
@@ -27,15 +28,19 @@ const _sfc_main = {
     const active = common_vendor.ref(0);
     common_vendor.ref([]);
     const transformedData = common_vendor.ref([]);
-    const transformData = (chinaAreas) => {
+    const transformData = (data) => {
       const groupedData = {};
-      chinaAreas.forEach((item) => {
+      data.forEach((item) => {
         const letter = item.initial_alphabet;
         const cityName = item.city;
+        const cityId = item.city_code;
         if (!groupedData[letter]) {
           groupedData[letter] = [];
         }
-        groupedData[letter].push(cityName);
+        groupedData[letter].push({
+          name: cityName,
+          id: cityId
+        });
       });
       const result = Object.keys(groupedData).map((letter) => ({
         letter,
@@ -49,16 +54,25 @@ const _sfc_main = {
       });
       const chinaAreas = res.data.china_areas;
       transformedData.value = transformData(chinaAreas);
-      console.log(transformedData);
+      console.log("Transformed Data:", transformedData.value);
+      isLoading.value = false;
+    };
+    const bindClick = (e) => {
+      const cityId = e.item.id;
+      common_vendor.index.navigateTo({
+        url: `/pages/explore-shop/explore-shop?selectedCityId=${cityId}`
+      });
     };
     common_vendor.onLoad(() => {
       console.log("city-index onLoad");
       postCityIndexRes();
     });
     return (_ctx, _cache) => {
-      return {
-        a: common_vendor.o(($event) => active.value = $event),
-        b: common_vendor.p({
+      return common_vendor.e({
+        a: isLoading.value
+      }, isLoading.value ? {} : common_vendor.e({
+        b: common_vendor.o(($event) => active.value = $event),
+        c: common_vendor.p({
           activeStyle: {
             fontWeight: "bold",
             transform: "scale(1.1)"
@@ -67,12 +81,16 @@ const _sfc_main = {
           height: "44",
           modelValue: active.value
         }),
-        c: common_vendor.o(_ctx.bindClick),
-        d: common_vendor.p({
+        d: active.value === 0
+      }, active.value === 0 ? {
+        e: common_vendor.o(bindClick),
+        f: common_vendor.p({
           options: transformedData.value,
           ["show-select"]: false
         })
-      };
+      } : active.value === 1 ? {} : {}, {
+        g: active.value === 1
+      }));
     };
   }
 };
