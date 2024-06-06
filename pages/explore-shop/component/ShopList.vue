@@ -2,7 +2,11 @@
 	<view v-if="list.length">
 		<view v-for="item in list" :key="item.id" class="item">
 			<view class="info-box">
+<<<<<<< HEAD
 				<view class="info" @click="shopCardClick(item)">
+=======
+				<view class="info">
+>>>>>>> a9aef6c5f5db80cc9099a7b4d6da17d5dd035cc7
 					<!-- <view style="color: red;">id:{{ item.id }}</view> -->
 					<view class="name">
 						<view class="text">
@@ -43,12 +47,15 @@
 			required: true
 		}
 	});
+<<<<<<< HEAD
 
 	const shopCardClick = (item) => {
 		uni.navigateTo({
 			url: `/pages/shop-info/shop-info?shopId=${item.id}`
 		});
 	}
+=======
+>>>>>>> a9aef6c5f5db80cc9099a7b4d6da17d5dd035cc7
 </script>
 
 <style lang="scss">
@@ -58,7 +65,10 @@
 		height: 85px;
 		display: flex;
 		align-items: center;
+<<<<<<< HEAD
 		padding: 5px 0;
+=======
+>>>>>>> a9aef6c5f5db80cc9099a7b4d6da17d5dd035cc7
 
 		.info-box {
 			// background-color: greenyellow;
@@ -68,6 +78,10 @@
 			width: 100%;
 			height: 100%;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> a9aef6c5f5db80cc9099a7b4d6da17d5dd035cc7
 			.info {
 				display: flex;
 				justify-content: space-evenly;
@@ -88,6 +102,10 @@
 				.label {
 					display: flex;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> a9aef6c5f5db80cc9099a7b4d6da17d5dd035cc7
 					.text {
 						color: #f89b0f;
 						font-size: 13px;
@@ -140,18 +158,30 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+<<<<<<< HEAD
 
 		.text {
+=======
+		.text{
+>>>>>>> a9aef6c5f5db80cc9099a7b4d6da17d5dd035cc7
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			color: gray;
 		}
+<<<<<<< HEAD
 
 		.image {
 			height: 250px;
 			width: 250px;
 		}
 
+=======
+		.image{
+			height: 321px;
+			width: 321px;
+		}
+		
+>>>>>>> a9aef6c5f5db80cc9099a7b4d6da17d5dd035cc7
 	}
 </style>

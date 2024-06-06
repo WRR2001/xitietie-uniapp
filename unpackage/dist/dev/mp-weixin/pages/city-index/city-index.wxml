@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 <view wx:if="{{a}}" style="font-size:100px"> 加载中... </view><view wx:else class="flex-box"><view class="tab"><zb-tab wx:if="{{c}}" u-i="4f83f22c-0" bind:__l="__l" bindupdateModelValue="{{b}}" u-p="{{c}}"></zb-tab></view><view wx:if="{{d}}" class="index"><uni-indexed-list wx:if="{{f}}" bindclick="{{e}}" u-i="4f83f22c-1" bind:__l="__l" u-p="{{f}}"/></view><view wx:elif="{{g}}"> 海外门店 </view></view>
+=======
+<view wx:if="{{a}}" style="font-size:100px"> 加载中... </view><view wx:else class="flex-box"><view class="tab"><zb-tab wx:if="{{c}}" u-i="2b7537d2-0" bind:__l="__l" bindupdateModelValue="{{b}}" u-p="{{c}}"></zb-tab></view><view wx:if="{{d}}" class="index"><uni-indexed-list wx:if="{{f}}" bindclick="{{e}}" u-i="2b7537d2-1" bind:__l="__l" u-p="{{f}}"/></view><view wx:elif="{{g}}"> 海外门店 </view></view>
+>>>>>>> a9aef6c5f5db80cc9099a7b4d6da17d5dd035cc7

@@ -37,6 +37,7 @@
 			{
 				"navigationBarTitleText" : "城市索引"
 			}
+<<<<<<< HEAD
 		},
 		{
 			"path" : "pages/shop-info/shop-info",
@@ -44,6 +45,8 @@
 			{
 				"navigationBarTitleText" : "门店详情"
 			}
+=======
+>>>>>>> a9aef6c5f5db80cc9099a7b4d6da17d5dd035cc7
 		}
 	],
 	"tabBar": {

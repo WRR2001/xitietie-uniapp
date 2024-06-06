@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 <view> INDEX </view><uni-section wx:if="{{a}}" style="margin-bottom:3px" u-i="c2aeace0-0" bind:__l="__l" u-p="{{a}}"></uni-section>
+=======
+<view> INDEX </view><uni-section wx:if="{{a}}" style="margin-bottom:3px" u-i="efd74710-0" bind:__l="__l" u-p="{{a}}"></uni-section>
+>>>>>>> a9aef6c5f5db80cc9099a7b4d6da17d5dd035cc7

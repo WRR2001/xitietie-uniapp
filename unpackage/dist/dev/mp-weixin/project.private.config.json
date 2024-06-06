@@ -8,6 +8,7 @@
     "miniprogram": {
       "list": [
         {
+<<<<<<< HEAD
           "name": "pages/shop-info/shop-info",
           "pathName": "pages/shop-info/shop-info",
           "query": "",
@@ -15,6 +16,8 @@
           "scene": null
         },
         {
+=======
+>>>>>>> a9aef6c5f5db80cc9099a7b4d6da17d5dd035cc7
           "name": "pages/explore-shop/explore-shop",
           "pathName": "pages/explore-shop/explore-shop",
           "query": "selectedCityId=156410500",

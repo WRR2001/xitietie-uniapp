@@ -16,6 +16,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
   __name: "explore-shop",
   setup(__props) {
     const isLoading = common_vendor.ref(true);
+<<<<<<< HEAD
     const postShopListParam = common_vendor.ref({
       country_code: "156",
       //深圳
@@ -34,6 +35,8 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
     const shopList = common_vendor.ref([]);
     const cityName = common_vendor.ref("");
     const filterShopList = common_vendor.ref([]);
+=======
+>>>>>>> a9aef6c5f5db80cc9099a7b4d6da17d5dd035cc7
     const processShopListData = (data) => {
       return data.map((item) => ({
         id: item.id,
@@ -43,15 +46,44 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
         closed_label: item.closed_label
       }));
     };
+<<<<<<< HEAD
+=======
+    const setCity = (selectedCityId) => {
+      if (selectedCityId) {
+        postShopListParam.value.city_code = selectedCityId;
+        console.log(postShopListParam.value.city_code);
+      } else {
+        console.log("未手动选择城市id");
+      }
+      postShopListRes();
+    };
+    const postShopListParam = common_vendor.ref({
+      country_code: "156",
+      //默认-深圳
+      city_code: "156440300"
+      // userLocation: "120.29850006103516,30.418750762939453"
+    });
+    const shopList = common_vendor.ref([]);
+    const cityName = common_vendor.ref("");
+    const filterShopList = common_vendor.ref([]);
+>>>>>>> a9aef6c5f5db80cc9099a7b4d6da17d5dd035cc7
     const postShopListRes = async () => {
       const res = await api_shop.postShopListAPI(postShopListParam.value);
       shopList.value = processShopListData(res.data.list);
       cityName.value = res.data.list[0].city;
       filterShopList.value = shopList.value.filter((item) => item.is_open === false);
+<<<<<<< HEAD
       isLoading.value = false;
       console.log(shopList.value);
       console.log(filterShopList);
     };
+=======
+      console.log(shopList.value);
+      console.log(filterShopList);
+      isLoading.value = false;
+    };
+    common_vendor.ref([]);
+>>>>>>> a9aef6c5f5db80cc9099a7b4d6da17d5dd035cc7
     const tablist = [
       {
         name: "待开业门店",
@@ -65,7 +97,11 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
     const active = common_vendor.ref(0);
     common_vendor.onLoad((option) => {
       console.log("explore-shop onLoad");
+<<<<<<< HEAD
       console.log("Selected city ID（主动选择的城市id）:", option.selectedCityId);
+=======
+      console.log("Selected city ID:", option.selectedCityId);
+>>>>>>> a9aef6c5f5db80cc9099a7b4d6da17d5dd035cc7
       const selectedCityId = option.selectedCityId;
       setCity(selectedCityId);
     });
@@ -104,5 +140,9 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
     };
   }
 });
+<<<<<<< HEAD
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-159896bb"], ["__file", "C:/Users/WRR/Desktop/喜贴贴小程序/xitietie-uniapp-main/pages/explore-shop/explore-shop.vue"]]);
+=======
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-159896bb"], ["__file", "C:/Users/WRR/Desktop/喜贴贴小程序/xitietie-uniapp-vue3-js/pages/explore-shop/explore-shop.vue"]]);
+>>>>>>> a9aef6c5f5db80cc9099a7b4d6da17d5dd035cc7
 wx.createPage(MiniProgramPage);

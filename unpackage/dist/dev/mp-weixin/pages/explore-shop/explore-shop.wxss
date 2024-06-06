@@ -1,5 +1,11 @@
 /* 水平间距 */
 /* 水平间距 */
+<<<<<<< HEAD
+=======
+.background.data-v-159896bb {
+  background-color: #eeeff8;
+}
+>>>>>>> a9aef6c5f5db80cc9099a7b4d6da17d5dd035cc7
 .navbar-diy.data-v-159896bb {
   height: 52px;
   background-color: #fff;

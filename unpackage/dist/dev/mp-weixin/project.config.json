@@ -16,10 +16,18 @@
       "disablePlugins": [],
       "outputPath": ""
     },
+<<<<<<< HEAD
     "ignoreUploadUnusedFiles": false
   },
   "compileType": "miniprogram",
   "libVersion": "3.4.6",
+=======
+    "ignoreUploadUnusedFiles": false,
+    "enhance": false
+  },
+  "compileType": "miniprogram",
+  "libVersion": "3.4.4",
+>>>>>>> a9aef6c5f5db80cc9099a7b4d6da17d5dd035cc7
   "appid": "wx5c093507325f81e0",
   "projectname": "测试uni-ui",
   "condition": {

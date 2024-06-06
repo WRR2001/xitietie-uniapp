@@ -94,5 +94,9 @@ const _sfc_main = {
     };
   }
 };
+<<<<<<< HEAD
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "C:/Users/WRR/Desktop/喜贴贴小程序/xitietie-uniapp-main/pages/city-index/city-index.vue"]]);
+=======
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "C:/Users/WRR/Desktop/喜贴贴小程序/xitietie-uniapp-vue3-js/pages/city-index/city-index.vue"]]);
+>>>>>>> a9aef6c5f5db80cc9099a7b4d6da17d5dd035cc7
 wx.createPage(MiniProgramPage);

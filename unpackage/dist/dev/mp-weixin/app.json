@@ -4,8 +4,12 @@
     "pages/my/my",
     "pages/sub/sub",
     "pages/explore-shop/explore-shop",
+<<<<<<< HEAD
     "pages/city-index/city-index",
     "pages/shop-info/shop-info"
+=======
+    "pages/city-index/city-index"
+>>>>>>> a9aef6c5f5db80cc9099a7b4d6da17d5dd035cc7
   ],
   "window": {
     "navigationBarTextStyle": "black",

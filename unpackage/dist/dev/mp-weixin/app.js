@@ -7,7 +7,10 @@ if (!Math) {
   "./pages/sub/sub.js";
   "./pages/explore-shop/explore-shop.js";
   "./pages/city-index/city-index.js";
+<<<<<<< HEAD
   "./pages/shop-info/shop-info.js";
+=======
+>>>>>>> a9aef6c5f5db80cc9099a7b4d6da17d5dd035cc7
 }
 const _sfc_main = {
   onLaunch: function() {
@@ -21,7 +24,11 @@ const _sfc_main = {
     console.log("App Hide");
   }
 };
+<<<<<<< HEAD
 const App = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "C:/Users/WRR/Desktop/喜贴贴小程序/xitietie-uniapp-main/App.vue"]]);
+=======
+const App = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "C:/Users/WRR/Desktop/喜贴贴小程序/xitietie-uniapp-vue3-js/App.vue"]]);
+>>>>>>> a9aef6c5f5db80cc9099a7b4d6da17d5dd035cc7
 function createApp() {
   const app = common_vendor.createSSRApp(App);
   return {

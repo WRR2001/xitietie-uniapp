@@ -7,6 +7,7 @@ const postShopListAPI = (postShopListParam) => {
     data: postShopListParam
   });
 };
+<<<<<<< HEAD
 const postShopInfoAPI = (postShopInfoParam) => {
   return utils_http.http({
     method: "POST",
@@ -15,4 +16,6 @@ const postShopInfoAPI = (postShopInfoParam) => {
   });
 };
 exports.postShopInfoAPI = postShopInfoAPI;
+=======
+>>>>>>> a9aef6c5f5db80cc9099a7b4d6da17d5dd035cc7
 exports.postShopListAPI = postShopListAPI;

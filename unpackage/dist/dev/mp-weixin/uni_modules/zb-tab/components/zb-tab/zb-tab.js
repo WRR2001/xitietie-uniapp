@@ -236,5 +236,9 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     f: $options.lineTabWidth
   };
 }
+<<<<<<< HEAD
 const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-b237120f"], ["__file", "C:/Users/WRR/Desktop/喜贴贴小程序/xitietie-uniapp-main/uni_modules/zb-tab/components/zb-tab/zb-tab.vue"]]);
+=======
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-b237120f"], ["__file", "C:/Users/WRR/Desktop/喜贴贴小程序/xitietie-uniapp-vue3-js/uni_modules/zb-tab/components/zb-tab/zb-tab.vue"]]);
+>>>>>>> a9aef6c5f5db80cc9099a7b4d6da17d5dd035cc7
 wx.createComponent(Component);
