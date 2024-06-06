@@ -1,22 +1,33 @@
 <template>
-	<view class="flex-box">
+	<view v-if="isLoading" style="font-size: 100px;">
+		加载中...
+	</view>
+	<view class="flex-box" v-else>
 		<view class="tab">
 			<zb-tab :activeStyle="{
-			    fontWeight: 'bold',
-			    transform: 'scale(1.1)'
-			    }" :data="tablist" v-model="active" height="44">
+				    fontWeight: 'bold',
+				    transform: 'scale(1.1)'
+				    }" :data="tablist" v-model="active" height="44">
 			</zb-tab>
 		</view>
 
-		<view class="index">
+		<!-- 国内 -->
+		<view v-if="active === 0" class="index">
+			<!-- 此索引组件只能在外面套一层view容器 -->
 			<uni-indexed-list :options="transformedData" @click="bindClick" :show-select="false" />
 		</view>
+		<!-- 海外 -->
+		<view v-else-if="active === 1">
+			海外门店
+		</view>
+
 	</view>
 </template>
 
 <script setup>
 	import {
-		ref
+		ref,
+		defineEmits
 	} from 'vue';
 	import {
 		onLoad
@@ -25,8 +36,11 @@
 		postCityIndexAPI
 	} from '@/api/city';
 
+	//控制骨架屏/加载gif
+	const isLoading = ref(true)
+
 	const tablist = [{
-			name: '国内',
+			name: '国内（含港澳台）',
 			value: 0,
 		},
 		{
@@ -35,35 +49,33 @@
 		}
 	]
 	const active = ref(0)
-
-
-
+	//------------------------------------------------------------
 	const cityIndex = ref([])
 	const transformedData = ref([]);
 
-	const transformData = (chinaAreas) => {
+	const transformData = (data) => {
 		const groupedData = {};
-
 		// 遍历原始数据，按首字母分组
-		chinaAreas.forEach(item => {
+		data.forEach(item => {
 			const letter = item.initial_alphabet;
 			const cityName = item.city;
+			const cityId = item.city_code
 
 			if (!groupedData[letter]) {
 				groupedData[letter] = [];
 			}
-			groupedData[letter].push(cityName);
+			groupedData[letter].push({
+				name: cityName,
+				id: cityId
+			});
 		});
-
 		// 转换为目标格式
 		const result = Object.keys(groupedData).map(letter => ({
 			letter,
 			data: groupedData[letter]
 		}));
-
 		return result;
 	};
-
 
 	const postCityIndexRes = async () => {
 		const res = await postCityIndexAPI({
@@ -71,47 +83,24 @@
 		});
 		const chinaAreas = res.data.china_areas;
 		transformedData.value = transformData(chinaAreas);
-		console.log(transformedData)
+		console.log('Transformed Data:', transformedData.value);
+
+		//请求到数据后销毁骨架屏
+		isLoading.value = false
 	};
+
+	const bindClick = (e) => {
+		// console.log(JSON.stringify(e))
+		const cityId = e.item.id;
+		uni.navigateTo({
+			url: `/pages/explore-shop/explore-shop?selectedCityId=${cityId}`
+		});
+	}
 
 	onLoad(() => {
 		console.log('city-index onLoad');
 		postCityIndexRes()
 	});
-
-
-	const list = [{
-			'letter': 'A',
-			'data': [
-				'阿克苏机场',
-				'阿拉山口机场',
-				'阿勒泰机场',
-				'阿里昆莎机场',
-				'安庆天柱山机场',
-				'澳门国际机场'
-			]
-		},
-		{
-			'letter': 'B',
-			'data': [
-				'保山机场',
-				'包头机场',
-				'北海福成机场',
-				'北京南苑机场',
-				'北京首都国际机场'
-			]
-		},
-		{
-			'letter': 'C',
-			'data': [
-				'保山机场',
-				'包头机场',
-				'北海福成机场',
-				'北京南苑机场',
-				'北京首都国际机场'
-			]
-		},
-	]
 </script>
 
 <style lang="scss">

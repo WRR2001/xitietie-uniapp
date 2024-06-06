@@ -9,38 +9,48 @@ if (!Array) {
 const _easycom_zb_tab = () => "../../uni_modules/zb-tab/components/zb-tab/zb-tab.js";
 const _easycom_uni_icons = () => "../../uni_modules/uni-icons/components/uni-icons/uni-icons.js";
 if (!Math) {
-  (_easycom_zb_tab + _easycom_uni_icons)();
+  (_easycom_zb_tab + _easycom_uni_icons + ShopList)();
 }
+const ShopList = () => "./component/ShopList.js";
 const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
   __name: "explore-shop",
   setup(__props) {
-    common_vendor.onLoad(() => {
-      console.log("explore-shop onLoad");
-      postShopListRes();
-    });
+    const isLoading = common_vendor.ref(true);
     const processShopListData = (data) => {
       return data.map((item) => ({
         id: item.id,
         name: item.name,
         address: item.address,
-        is_open: item.is_open
+        is_open: item.is_open,
+        closed_label: item.closed_label
       }));
     };
-    const postShopListParam = {
-      country_code: "156",
-      city_code: "156810000"
-      // userLocation: "120.29850006103516,30.418750762939453"
+    const setCity = (selectedCityId) => {
+      if (selectedCityId) {
+        postShopListParam.value.city_code = selectedCityId;
+        console.log(postShopListParam.value.city_code);
+      } else {
+        console.log("未手动选择城市id");
+      }
+      postShopListRes();
     };
+    const postShopListParam = common_vendor.ref({
+      country_code: "156",
+      //默认-深圳
+      city_code: "156440300"
+      // userLocation: "120.29850006103516,30.418750762939453"
+    });
     const shopList = common_vendor.ref([]);
     const cityName = common_vendor.ref("");
     const filterShopList = common_vendor.ref([]);
     const postShopListRes = async () => {
-      const res = await api_shop.postShopListAPI(postShopListParam);
+      const res = await api_shop.postShopListAPI(postShopListParam.value);
       shopList.value = processShopListData(res.data.list);
       cityName.value = res.data.list[0].city;
       filterShopList.value = shopList.value.filter((item) => item.is_open === false);
       console.log(shopList.value);
       console.log(filterShopList);
+      isLoading.value = false;
     };
     common_vendor.ref([]);
     const tablist = [
@@ -53,7 +63,13 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
         value: 1
       }
     ];
-    const active = common_vendor.ref(1);
+    const active = common_vendor.ref(0);
+    common_vendor.onLoad((option) => {
+      console.log("explore-shop onLoad");
+      console.log("Selected city ID:", option.selectedCityId);
+      const selectedCityId = option.selectedCityId;
+      setCity(selectedCityId);
+    });
     return (_ctx, _cache) => {
       return common_vendor.e({
         a: common_vendor.o(($event) => active.value = $event),
@@ -66,34 +82,26 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
           height: "44",
           modelValue: active.value
         }),
-        c: common_vendor.t(cityName.value),
-        d: common_vendor.p({
+        c: isLoading.value
+      }, isLoading.value ? {} : common_vendor.e({
+        d: common_vendor.t(cityName.value),
+        e: common_vendor.p({
           type: "down",
           size: "20"
         }),
-        e: active.value === 0
+        f: active.value === 0
       }, active.value === 0 ? {
-        f: common_vendor.f(filterShopList.value, (item, k0, i0) => {
-          return {
-            a: common_vendor.t(item.id),
-            b: common_vendor.t(item.name),
-            c: common_vendor.t(item.address),
-            d: item.id
-          };
+        g: common_vendor.p({
+          list: filterShopList.value
         })
-      } : active.value === 1 ? {
-        h: common_vendor.f(shopList.value, (item, k0, i0) => {
-          return {
-            a: common_vendor.t(item.id),
-            b: common_vendor.t(item.name),
-            c: common_vendor.t(item.address),
-            d: item.id
-          };
+      } : {
+        i: common_vendor.p({
+          list: shopList.value
         })
-      } : {}, {
-        g: active.value === 1,
-        i: active.value
-      });
+      }, {
+        h: active.value === 1,
+        j: active.value
+      }));
     };
   }
 });

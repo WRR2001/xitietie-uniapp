@@ -60,7 +60,8 @@ const _sfc_main = {
         let items = value.data.map((item) => {
           let obj = {};
           obj["key"] = value.letter;
-          obj["name"] = item;
+          obj["name"] = item.name;
+          obj["id"] = item.id;
           obj["itemIndex"] = index;
           index++;
           obj.checked = item.checked ? item.checked : false;

@@ -46,7 +46,8 @@
 			onClick(idx, index) {
 				this.$emit("itemClick", {
 					idx,
-					index
+					index,
+					id: this.list.items[index].id  // 传递城市ID
 				})
 			}
 		}
