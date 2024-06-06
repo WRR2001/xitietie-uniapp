@@ -1,0 +1,35 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/my/my",
+    "pages/sub/sub",
+    "pages/explore-shop/explore-shop",
+    "pages/city-index/city-index",
+    "pages/shop-info/shop-info"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/index/index"
+      },
+      {
+        "text": "订阅",
+        "pagePath": "pages/sub/sub"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/my/my"
+      }
+    ],
+    "selectedColor": "#007AFF",
+    "color": "#000"
+  },
+  "usingComponents": {}
+}

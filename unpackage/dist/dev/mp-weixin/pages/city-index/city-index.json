@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "城市索引",
+  "usingComponents": {
+    "zb-tab": "../../uni_modules/zb-tab/components/zb-tab/zb-tab",
+    "uni-indexed-list": "../../uni_modules/uni-indexed-list/components/uni-indexed-list/uni-indexed-list"
+  }
+}

@@ -1,0 +1,1 @@
+<view><view wx:if="{{a}}"><view class="name">{{b}}</view><view class="info"><view class="address"> 地址：{{c}}</view><view wx:if="{{d}}" class="contact_phone"> 电话：{{e}}</view><view class="time"> 门店营业时间：{{f}}~{{g}}</view><view class="24h"> 是否24小时营业：{{h}}</view></view></view></view>
